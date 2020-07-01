@@ -8,7 +8,7 @@ import time
 def sendTemp(message):
     markup = keyboard.create_keyboard()
     m = HumTemp.measure()
-    add_data(time=time.ctime(), temp=m.get('temp'), hum=m.get('hum'))
+    add_data(time=time.ctime(), temp=m.get('temp')+ "C", hum=m.get('hum')+ "%")
     if message.text == "temperature":
         text = "temperature - " + m.get('temp') + "C"
         bot.send_message(message.chat.id, text)
