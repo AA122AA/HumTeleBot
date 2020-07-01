@@ -8,8 +8,8 @@ markup.row('all info')
 
 @bot.message_handler(content_types=['text'])
 def sendTemp(message):
+    m = HumTemp.measure()
     if message.text == "temperature":
-        m = HumTemp.measure()
         bot.send_message(message.chat.id, m.get('temp'))
     elif message.text == "humidity":
         bot.send_message(message.chat.id, m.get('hum'))
