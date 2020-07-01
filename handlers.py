@@ -10,10 +10,11 @@ markup.row('all info')
 def sendTemp(message):
     m = HumTemp.measure()
     if message.text == "temperature":
-        bot.send_message(message.chat.id, m.get('temp'))
+        bot.send_message(message.chat.id, "temperature - " + m.get('temp'))
     elif message.text == "humidity":
-        bot.send_message(message.chat.id, m.get('hum'))
+        bot.send_message(message.chat.id, "humidity - " + m.get('hum'))
     elif message.text == "all info":
-        bot.send_message(message.chat.id, m.items())
+        text = "temperature - " + m.get('temp') + "\n" + "humidity - " + m.get('hum')
+        bot.send_message(message.chat.id, text)
     else:
-        bot.send_message(message.chat.id, "upsss...", reply_markup=markup)
+        bot.send_message(message.chat.id, "I can only send you temp and hum. Please click button.", reply_markup=markup)
