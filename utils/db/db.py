@@ -14,9 +14,7 @@ def ensure_connection(func):
 #Проверить что нужные таблицы существуют, иначе создать их
 @ensure_connection
 def init_db(conn, force: bool = False): #force - пересоздание таблицы 
- 
     c = conn.cursor()
-
     if force:
         c.execute('DROP TABLE IF EXISTS temp_hum_data')
 
@@ -30,6 +28,7 @@ def init_db(conn, force: bool = False): #force - пересоздание таб
     ''')
     # Сохранить изменения
     conn.commit()
+    print("db created or allready exists")
 
 @ensure_connection
 def add_data(conn, time: str, temp: str, hum: str):
