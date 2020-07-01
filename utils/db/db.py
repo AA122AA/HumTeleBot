@@ -33,5 +33,5 @@ def init_db(conn, force: bool = False): #force - пересоздание таб
 @ensure_connection
 def add_data(conn, time: str, temp: str, hum: str):
     c = conn.cursor()
-    c.execute('INSERT INTO temp_hum_data (Time, Temperature,C, Humidity,%) VALUES(?,?,?)', (time, temp, hum))
+    c.execute('INSERT INTO temp_hum_data (Time, Temperature, Humidity) VALUES(?,?,?)', (time, temp, hum))
     conn.commit()
