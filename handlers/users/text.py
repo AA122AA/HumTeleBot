@@ -1,10 +1,11 @@
 from loader import bot
 from keyboards import keyboard
-import HumTemp
+from utils import HumTemp
 
-markup = keyboard
+
 @bot.message_handler(content_types=['text'])
 def sendTemp(message):
+    markup = keyboard.create_keyboard()
     m = HumTemp.measure()
     if message.text == "temperature":
         text = "temperature - " + m.get('temp') + "C"
