@@ -20,10 +20,10 @@ def init_db(conn, force: bool = False): #force - пересоздание таб
     
     creat_table = """CREATE TABLE IF NOT EXISTS temp_hum_data (
                         id          INTEGER PRIMARY KEY,
-                        Time           text NOT NULL,
-                        Temperature,C  text NOT NULL,
-                        Humidity,%     text NOT NULL
-                        
+                        Time        text NOT NULL,
+                        Temperature text NOT NULL,
+                        Humidity    ext NOT NULL
+
                     );"""     
     c.execute(creat_table)
     # Сохранить изменения
