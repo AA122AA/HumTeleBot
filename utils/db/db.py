@@ -32,7 +32,7 @@ def init_db(conn, force: bool = False): #force - пересоздание таб
     conn.commit()
 
 @ensure_connection
-def add_data(conn, time, temp, hum):
+def add_data(conn, time: str, temp: str, hum: str):
     c = conn.cursor()
     c.execute('INSERT INTO temp_hum_data (time, tempr, hum) VALUES(?,?)', (time, temp, hum))
     conn.commit()
