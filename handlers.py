@@ -1,5 +1,4 @@
-from app import bot
-import telebot
+from loader import bot
 import HumTemp
 
 @bot.message_handler(content_types=['text'])
