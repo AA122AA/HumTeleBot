@@ -3,7 +3,7 @@ import sqlite3
 #Декоратор для безопасного подключения к базе данных
 def ensure_connection(func):
     def inner(*args, **kwargs):
-        with sqlite3.connect('utils/db/tempHumData.db') as conn:
+        with sqlite3.connect('/home/pi/GitHub/HumTeleBot/utils/db/tempHumData.db') as conn:
             print("connection success")
             kwargs['conn'] = conn
             res = func(*args, **kwargs)
