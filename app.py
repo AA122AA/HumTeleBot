@@ -9,9 +9,11 @@ def main():
         f.write("bot started \n")
     try:
         bot.polling(none_stop=True)     
-    except ModuleNotFoundError as e:
+    except Exception as e:
         with open("/home/pi/log.txt", 'a') as f:
             f.write(e + "\n")
+        with open("/home/pi/log.txt", 'a') as f:
+            f.write("module not found \n")
     except:
         with open("/home/pi/log.txt", 'a') as f:
             f.write("bot drop polling \n")
