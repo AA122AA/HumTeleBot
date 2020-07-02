@@ -11,13 +11,13 @@ def main():
         bot.polling(none_stop=True)     
     except Exception as e:
         with open("/home/pi/log.txt", 'a') as f:
-            f.write(e + "\n")
+            f.write(str(e) + "\n")
         with open("/home/pi/log.txt", 'a') as f:
             f.write("module not found \n")
     except:
         with open("/home/pi/log.txt", 'a') as f:
             f.write("bot drop polling \n")
-    
+
     with open("/home/pi/log.txt", 'a') as f:
        f.write("bot polling \n")
 
