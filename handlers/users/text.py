@@ -1,6 +1,6 @@
 from loader import bot
 from keyboards import keyboard
-from utils import HumTemp
+from utils.misc import HumTemp
 from utils.db.db import add_data
 import time
 
